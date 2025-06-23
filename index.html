@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Happy Birthday!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <!-- Festive font from Google Fonts -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     html, body {
       height: 100%;
@@ -15,7 +18,8 @@
     body {
       min-height: 100vh;
       color: #fff;
-      font-family: 'Segoe UI', 'Arial', sans-serif;
+      /* font-family: 'Dancing Script', cursive; */
+      font-family: 'Great Vibes', cursive;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -33,7 +37,7 @@
       object-fit: contain;
       z-index: 0;
       pointer-events: none;
-      opacity: 0.55; /* Adjust for desired visibility */
+      opacity: 100%; /* Adjust for desired visibility */
       background: #0a1931;
     }
     .greeting {
@@ -52,9 +56,9 @@
       word-break: break-word;
     }
     .greeting p {
-      font-size: 1.2em;
+      font-size: 1.70em;
       color: #90caf9;
-      margin-bottom: 29em;
+      margin-bottom: 20em;
       text-shadow: 0 0 10px #0d47a1;
       word-break: break-word;
     }
@@ -99,10 +103,10 @@
         padding: 0 2vw;
       }
       .greeting h1 {
-        font-size: 1.5em;
+        font-size: 2em;
       }
       .greeting p {
-        font-size: 1em;
+        font-size: 1.5em;
       }
       .fireworks-btn {
         padding: 12px 18px;
@@ -112,10 +116,10 @@
     }
     @media (max-width: 400px) {
       .greeting h1 {
-        font-size: 1.1em;
+        font-size: 2em;
       }
       .greeting p {
-        font-size: 0.9em;
+        font-size: 1.5em;
       }
       .fireworks-btn {
         font-size: 0.9em;
@@ -248,7 +252,7 @@
     function launchFirework() {
       // Random position in upper 2/3 of the screen
       const tx = 100 + Math.random() * (W - 200);
-      const ty = 80 + Math.random() * (H * 0.5);
+      const ty = 10 + Math.random() * (H * 0.30);
       const sx = tx + (Math.random() - 0.5) * 100;
       const sy = H + 10;
       const color = fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
@@ -298,8 +302,8 @@
 
     // Button event
     document.getElementById('fireworks-btn').addEventListener('click', () => {
-      // Launch 3-5 fireworks in quick succession
-      let count = 3 + Math.floor(Math.random() * 3);
+      // Launch x - y fireworks in quick succession
+      let count = 5 + Math.floor(Math.random() * 2);
       for (let i = 0; i < count; i++) {
         setTimeout(launchFirework, i * 350);
       }
